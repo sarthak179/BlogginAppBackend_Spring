@@ -2,12 +2,11 @@ package com.example.BloggingAppAPI.comments;
 
 import com.example.BloggingAppAPI.articles.ArticleEntity;
 import com.example.BloggingAppAPI.users.UserEntity;
-import jakarta.annotation.Nullable;
-import jakarta.persistence.*;
 import lombok.*;
-import org.apache.catalina.User;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.lang.Nullable;
 
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "Comments")
@@ -15,6 +14,8 @@ import java.util.Date;
 @Setter
 @ToString
 @RequiredArgsConstructor
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class CommentEntity {
     @Id

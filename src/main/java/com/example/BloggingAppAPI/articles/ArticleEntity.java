@@ -1,16 +1,18 @@
 package com.example.BloggingAppAPI.articles;
 
 import com.example.BloggingAppAPI.users.UserEntity;
-import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "Articles")
 @Getter
 @Setter
 @ToString
+@Builder
+@AllArgsConstructor
 @RequiredArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ArticleEntity {
@@ -23,11 +25,9 @@ public class ArticleEntity {
     @Column(length = 100)
     private String title;
 
-    @NonNull
     @Column(unique = true)
     private String slug;
 
-    @NonNull
     private String subtitle;
 
     @NonNull

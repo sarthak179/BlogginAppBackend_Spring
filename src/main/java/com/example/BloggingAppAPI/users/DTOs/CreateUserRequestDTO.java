@@ -1,0 +1,17 @@
+package com.example.BloggingAppAPI.users.DTOs;
+
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.NonNull;
+import lombok.Setter;
+
+@Data
+@Setter(AccessLevel.NONE)
+public class CreateUserRequestDTO {
+    @NonNull
+    private String username;
+    @NonNull
+    private String password;
+    private String email;
+
+}

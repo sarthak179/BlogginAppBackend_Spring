@@ -1,14 +1,18 @@
 package com.example.BloggingAppAPI.users;
 
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 @Entity(name = "Users")
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"username"})})
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -20,14 +24,13 @@ public class UserEntity {
     private String username;
 
     @Column(nullable = false)
-    @NonNull
+    private String password;
+
     private String email;
 
     @Column(nullable = true)
-    @NonNull
     private String bio;
 
     @Column(nullable = true)
-    @NonNull
     private String image;
 }
